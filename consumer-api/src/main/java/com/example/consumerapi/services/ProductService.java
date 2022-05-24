@@ -1,6 +1,6 @@
 package com.example.consumerapi.services;
 
-import entities.Product;
+import com.example.consumerapi.entities.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class ProductService {
 
         Mono<Product> monoProduct = this.webClient
                 .method(HttpMethod.GET)
-                .uri("http://localhost:8081/product/{id}", id)
+                .uri("http://localhost:8081/products/{id}", id)
                 .retrieve()
                 .bodyToMono(Product.class);
 

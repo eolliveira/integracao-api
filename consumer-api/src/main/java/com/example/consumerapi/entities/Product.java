@@ -1,4 +1,4 @@
-package entities;
+package com.example.consumerapi.entities;
 
 public class Product {
     private Long id;
