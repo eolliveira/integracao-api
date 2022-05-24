@@ -1,7 +1,7 @@
 package com.example.consumerapi.controllers;
 
-import com.example.consumerapi.services.ProductService;
 import com.example.consumerapi.entities.Product;
+import com.example.consumerapi.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

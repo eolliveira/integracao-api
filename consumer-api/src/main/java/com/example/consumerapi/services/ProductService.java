@@ -17,9 +17,8 @@ public class ProductService {
     @Autowired
     private WebClient webClientPrices;
 
-    public Product findById(Long id){
+    public Product findById(Long id) {
 
-        /*
         Mono<Product> monoProduct = this.webClientProducts
                 .method(HttpMethod.GET)
                 .uri("/products/{id}", id)
@@ -36,20 +35,26 @@ public class ProductService {
 
         //agrupa uma lista de mono, e aguarda todas as req finalizarem
         Product product = Mono.zip(monoProduct, monoPrice).map(tuple -> {
+            //Atribui price ao product
             tuple.getT1().setPrice(tuple.getT2().getPrice());
             return tuple.getT1();
         }).block();
-         */
 
-        Product product = new Product(10L, "Celular", 45.0);
+        /*
+
+        //Metodo POST
+        Product p = new Product(10L, "Celular", 45.0);
 
         Mono<Product> productMono = webClientProducts
                 .method(HttpMethod.POST)
                 .uri("/products")
-                .body(BodyInserters.fromValue(product))
+                .body(BodyInserters.fromValue(p))
                 .retrieve()
                 //define o tipo do retorno
                 .bodyToMono(Product.class);
+        Product product = productMono.block();
+
+         */
 
         return product;
     }

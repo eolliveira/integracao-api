@@ -1,6 +1,8 @@
 package com.example.consumerapi.entities;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private Long id;
     private String name;
     private Double price;
@@ -43,5 +45,3 @@ public class Product {
         this.price = price;
     }
 }
-
-
