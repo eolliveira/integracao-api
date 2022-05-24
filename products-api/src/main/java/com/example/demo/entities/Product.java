@@ -2,11 +2,6 @@ package com.example.demo.entities;
 
 import java.io.Serializable;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
-
 public class Product implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -14,14 +9,14 @@ public class Product implements Serializable {
 	private String name;
 	private String description;
 
-	private Product() {}
-
 	public Product(Long id, String name, String description) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 	}
+	
+	public Product() {}
 
 	public Long getId() {
 		return id;
